@@ -1,5 +1,10 @@
 <%- include('partials/header') %>
 <div class="container mt-5 jumbotron">
+  <% if(user) { %>
+    <h4 style="padding-left:13rem">Email already registered! 
+      <a href="/login">Login</a>
+    </h4>
+  <%  } %>
   <h1 style="padding-left:13rem">Register</h1>
 
   <div class="row">
@@ -11,15 +16,15 @@
           <form action="/register" method="POST">
             <div class="form-group">
               <label for="username">Username</label>
-              <input type="text" class="form-control" name="username">
+              <input type="text" class="form-control" name="username" required>
             </div>
             <div class="form-group">
               <label for="email">Email</label>
-              <input type="email" class="form-control" name="email">
+              <input type="email" pattern="/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/" class="form-control" name="email" required>
             </div>
             <div class="form-group">
               <label for="password">Password</label>
-              <input type="password" class="form-control" name="password">
+              <input type="password" class="form-control" name="password" required>
             </div>
             <button type="submit" class="btn btn-dark btn-lg">Register</button>
           </form>
@@ -27,7 +32,7 @@
         </div>
       </div>
     </div>
-        
+
       </div>
     </div>
 
