@@ -1,0 +1,17 @@
+<%- include('partials/header') %>
+
+<div class="jumbotron text-center centered">
+  <div class="container">
+    <i class="fa fa-unlock-alt fa-6x" aria-hidden="true"></i>
+    <h1 class="display-4">Yayy!! You are successfully authenticated</h1>
+
+    <% usersWithSecrets.forEach(function(user){ %>
+      <p class="secret-text"><%=user.secret%></p>
+    <% }) %>
+    
+    <hr>
+    <a class="btn btn-light btn-lg" href="/logout" role="button">Log Out</a>
+  </div>
+</div>
+
+<%- include('partials/footer') %>
